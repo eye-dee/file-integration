@@ -1,0 +1,41 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.train'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 10
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-amqp')
+    compile('org.springframework.boot:spring-boot-starter-jdbc')
+    compile('org.springframework.boot:spring-boot-starter-integration')
+    compile('org.springframework.integration:spring-integration-file')
+    compile('org.springframework.integration:spring-integration-ftp')
+    compile('org.springframework.integration:spring-integration-amqp')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    runtime('com.h2database:h2')
+    compileOnly('org.projectlombok:lombok')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.2'
+    compile group: 'com.zaxxer', name: 'HikariCP', version: '3.2.0'
+
+}

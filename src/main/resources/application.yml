@@ -1,0 +1,16 @@
+spring:
+  rabbitmq:
+    host: 0.0.0.0
+    username: file
+    password: file
+    port: 5672
+  datasource:
+    hikari:
+      jdbc-url: jdbc:postgresql://localhost:5432/file
+      username: file
+      password: file
+    url: jdbc:postgresql://localhost:5432/file
+    username: file
+    password: file
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
